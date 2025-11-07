@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramcrew Trading Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <h1>RAMCREW</h1>
+      <p>Discipline • Patience • Mindset</p>
+    </div>
+  </header>
+
+  <div class="progress">
+    <div class="step" id="step-checklist">Checklist</div>
+    <div class="step" id="step-risk">Risk</div>
+    <div class="step" id="step-mt5">MT5</div>
+    <div class="step" id="step-journal">Journal</div>
+  </div>
+
+  <main class="container">
+    <!-- Checklist -->
+    <section id="checklist" class="page">
+      <h2>Trade Setup Checklist</h2>
+      <ul id="checklist-items" class="checklist"></ul>
+      <p>Accuracy: <span id="accuracy">0</span>%</p>
+      <button id="to-risk" class="btn primary" disabled>Next → Risk</button>
+    </section>
+
+    <!-- Risk Management -->
+    <section id="risk" class="page hidden">
+      <h2>Risk Management</h2>
+      <label>Balance (USD)<input id="balance" type="number" placeholder="1000"></label>
+      <label>Risk %<input id="riskPercent" type="number" placeholder="1"></label>
+      <label>Stop Loss (pips)<input id="stopLoss" type="number" placeholder="50"></label>
+      <label>Symbol<input id="symbol" type="text" value="XAUUSD"></label>
+      <div class="card">
+        <p>Risk Amount: <strong id="riskAmount">$0.00</strong></p>
+        <p>Lot Size: <strong id="lotSize">0.00</strong></p>
+      </div>
+      <button id="open-mt5" class="btn primary" disabled>Next → MT5</button>
+    </section>
+
+    <!-- MT5 Section -->
+    <section id="mt5" class="page hidden">
+      <h2>MT5 Execution</h2>
+      <p>After you click the button below, MT5 will open in a new tab.<br>
+      Once you complete your trade, return here and click "Next → Journal".</p>
+      <button id="open-mt5-tab" class="btn primary">Open MT5 Terminal</button>
+      <button id="to-journal" class="btn primary">Next → Journal</button>
+    </section>
+
+    <!-- Journal Section -->
+    <section id="journal" class="page hidden">
+      <h2>Trading Journal</h2>
+      <label>Symbol <input id="j-symbol" placeholder="XAUUSD"></label>
+      <label>Direction 
+        <select id="j-direction"><option>Long</option><option>Short</option></select>
+      </label>
+      <label>R:R <input id="j-rr" type="number" value="2"></label>
+      <label>Lot <input id="j-lot" type="number" step="0.01" value="0.01"></label>
+      <label>P/L (USD) <input id="j-pl" type="number" step="0.01" value="0"></label>
+      <button id="save-journal" class="btn primary">Save Trade</button>
+      <div id="journal-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © RAMCREW 2025 — Discipline • Patience • Mindset
+    <button id="reset-site" class="btn small">Reset</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
