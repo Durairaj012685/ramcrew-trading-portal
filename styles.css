@@ -1,0 +1,112 @@
+:root {
+  --green: #00994d;
+  --black: #000000;
+  --muted: #666;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: var(--black);
+}
+
+.header {
+  background: white;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 3px solid var(--green);
+}
+
+.brand h1 {
+  color: var(--black);
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brand p {
+  color: var(--muted);
+  margin: 5px 0 0;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-around;
+  background: #f7f7f7;
+  color: var(--muted);
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.step.active, .step.done {
+  color: var(--green);
+  font-weight: bold;
+}
+.step.done::before { content: "✓ "; color: var(--green); }
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.hidden { display: none; }
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.btn.primary {
+  background: var(--green);
+  color: white;
+}
+.btn.primary:hover {
+  background: #00cc66;
+}
+.btn.small {
+  font-size: 12px;
+  margin-left: 10px;
+  background: #ddd;
+  color: #000;
+}
+
+.card {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 15px;
+  background: #fafafa;
+  border-top: 1px solid #ddd;
+}
